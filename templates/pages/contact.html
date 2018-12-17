@@ -1,0 +1,11 @@
+{% extends 'archibase/base.html' %}
+{% block content %}
+		<h1>Contact</h1>
+
+{% if envoi%} votre message a ete bien envoye{% endif%}
+<form action="" method="POST">
+	{% csrf_token%}
+	{{form.as_p}}
+	 <button type="submit" class="save btn btn-default">Save</button>
+</form>	
+{% endblock %}

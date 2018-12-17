@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style1.css'%}">
+	{% block stylesheet %}{% endblock %}
+	<title>{% block title%}admin{% endblock %}</title>
+</head>
+<body>
+	<div class="header">
+		<a href=" 'contact'"></a>
+	</div>
+	{% include 'archibase/nav.html'%}
+	<div class="wrapper">
+	{% block content %}
+	{% endblock %}
+	</div>
+	{% include 'archibase/footer.html'%}
+</body>
+</html>

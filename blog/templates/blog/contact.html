@@ -1,0 +1,8 @@
+<h1>Contact</h1>
+
+{% if envoi%} votre message a ete bien envoye{% endif%}
+<form action="contact" method="POST">
+	{% csrf_token%}
+	{{form.as_p}}
+	<input type="submit" name="Envoyer" value="submit">
+</form>

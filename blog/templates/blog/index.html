@@ -1,0 +1,25 @@
+{% extends 'archibase/base.html' %}
+<!-- {% load static %}
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css'%}">{% endblock %} -->
+{% block content %}
+	<h1>Blog({{posts|length}} posts)</h1>
+
+{% for post in posts %}
+	<article>
+		<h2>
+			<a href="show/{{post.id}}">#{{post.id}}-{{post.title|upper}}</a>
+		</h2>
+		<p>
+			<time datetime="{{post.Create_at|date:'Y-m-d'}}">Posted {{post.Create_at|timesince}} ago</time>
+		</p>
+		<p>{{post.body|truncatewords:3}}</p>
+		<p><a href="show/{{post.id}}">Lire la suite</a></p>
+	</article>
+
+	{% if not forloop.last %}
+	<hr>
+	{% endif %}
+{% endfor %}
+{% endblock %}
+
+
